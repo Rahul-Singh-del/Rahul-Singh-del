@@ -107,7 +107,9 @@ define([
 
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
-
+        
+         var rows = Platform.Function.UpdateData("Test Custom Activity",["From Originating Number"],[body],["Study Id", "Sponsor Id"],[messagingService, accountSid]);
+        
     }                    
 
 });
