@@ -17,7 +17,7 @@
             "inArguments": [
                 {
                   "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" 
+                  "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}" 
                 }               
             ],
             "outArguments": [],
@@ -79,35 +79,35 @@
             "execute": {
                 "inArguments": [
                     {
-                        "accountSid": {
+                        "sponsorId": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"   
                         }
                     },                    
-                    {
+                 /*   {
                         "authToken": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"   
                         }
-                    },                    
+                    }, */                   
                     {
-                        "from": {
-                            "dataType": "Phone",
+                        "transactionId": {
+                            "dataType": "String",
                             "isNullable": true,
                             "direction": "out"   
                         }
                     },                    
                     {
                         "to": {
-                            "dataType": "Phone",
+                            "dataType": "String",
                             "isNullable": false,
                             "direction": "out"   
                         }
                     },
                     {
-                        "body": {
+                        "fromNumber": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"   
