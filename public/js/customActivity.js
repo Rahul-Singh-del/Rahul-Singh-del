@@ -94,6 +94,8 @@ define([
         var authToken = $('#authToken').val();
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
+        
+        var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
 
         payload['arguments'].execute.inArguments = [{
             "accountSid": accountSid,
@@ -112,8 +114,8 @@ define([
         // var insertedRowCount = Platform.Function.InsertData(Test Custom Activity, insertColumnArr, insertColumnValueArr);
         
         //<script runat="server">
-         Platform.Load("core", "1.1.5");
-        var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
+         //Platform.Load("core", "1.1.5");
+        //var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
         //</script>
         
     }                    
