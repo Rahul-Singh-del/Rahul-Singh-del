@@ -50,20 +50,20 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'accountSid') {
-                    $('#accountSID').val(val);
+                if (key === 'sponsorId') {
+                    $('#sponsorId').val(val);
                 }
 
                 if (key === 'authToken') {
                     $('#authToken').val(val);
                 }
 
-                if (key === 'messagingService') {
-                    $('#messagingService').val(val);
+                if (key === 'studyId') {
+                    $('#studyId').val(val);
                 }
 
-                if (key === 'body') {
-                    $('#messageBody').val(val);
+                if (key === 'fromNumber') {
+                    $('#fromNumber').val(val);
                 }                                                               
 
             })
@@ -90,17 +90,17 @@ define([
 
     function save() {
 
-        var accountSid = $('#accountSID').val();
+        var sponsorId = $('#sponsorId').val();
         var authToken = $('#authToken').val();
-        var messagingService = $('#messagingService').val();
-        var body = $('#messageBody').val();
+        var studyId = $('#studyId').val();
+        var fromNumber = $('#fromNumber').val();
         
        
         payload['arguments'].execute.inArguments = [{
-            "accountSid": accountSid,
+            "sponsorId": sponsorId,
             "authToken": authToken,
-            "messagingService": messagingService,
-            "body": body,
+            "studyId": studyId,
+            "fromNumber": fromNumber,
             "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}" //<----This should map to your data extension name and phone number column
         }];
 
@@ -117,7 +117,7 @@ define([
          //Platform.Load("core", "1.1.5");
         //var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
         //</script>
-        executeSql('INSERT INTO Test Custom Activity (From Originating Number, Study Id) VALUES (?, ?)', [body, messagingService]);
+        executeSql('INSERT INTO Test Custom Activity (From Originating Number, Study Id) VALUES (?, ?)', [fromNumber, studyId]);
         
     }                    
 
