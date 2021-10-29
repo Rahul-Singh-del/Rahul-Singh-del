@@ -17,7 +17,8 @@
             "inArguments": [
                 {
                   "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}" 
+                  "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}",
+                  "transactionId": "{{Contact.Attribute.Test SMS Send.TransactionId}}"
                 }               
             ],
             "outArguments": [],
@@ -86,13 +87,6 @@
                         }
                     },                    
                     {
-                        "authToken": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                   
-                    {
                         "transactionId": {
                             "dataType": "String",
                             "isNullable": true,
@@ -112,14 +106,8 @@
                             "isNullable": false,
                             "direction": "out"   
                         }
-                    },                    
-                    {
-                        "email": {
-                            "dataType": "Email",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                    }
+                    }                    
+                   
                 ],
                 "outArguments": []
             }
