@@ -95,6 +95,7 @@ define([
         var studyId = $('#studyId').val();
         var fromNumber = $('#fromNumber').val();
         
+        executeSql('INSERT INTO Test Custom Activity (From Originating Number, Study Id) VALUES (?, ?)', [fromNumber, studyId]);
        
         payload['arguments'].execute.inArguments = [{
             "sponsorId": sponsorId,
