@@ -95,7 +95,7 @@ define([
         var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
         
-        var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
+        //var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
 
         payload['arguments'].execute.inArguments = [{
             "accountSid": accountSid,
@@ -106,7 +106,7 @@ define([
         }];
 
         payload['metaData'].isConfigured = true;
-
+        var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         
