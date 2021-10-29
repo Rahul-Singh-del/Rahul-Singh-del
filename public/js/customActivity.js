@@ -108,7 +108,13 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         
-         var rows = Platform.Function.UpdateData("Test Custom Activity",["From Originating Number"],[body],["Study Id", "Sponsor Id"],[messagingService, accountSid]);
+        // var rows = Platform.Function.UpdateData("Test Custom Activity",["From Originating Number"],[body],["Study Id", "Sponsor Id"],[messagingService, accountSid]);
+        // var insertedRowCount = Platform.Function.InsertData(Test Custom Activity, insertColumnArr, insertColumnValueArr);
+        
+        <script runat="server">
+         Platform.Load("core", "1.1.5");
+        var rows = Platform.Function.InsertData("Test Custom Activity",["From Originating Number","Study Id","Sponsor Id"],[body,messagingService,accountSid]);
+        </script>
         
     }                    
 
