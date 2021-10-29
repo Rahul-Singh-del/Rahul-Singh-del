@@ -16,7 +16,6 @@
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Default.EmailAddress}}",
                   "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}",
                   "transactionId": "{{Contact.Attribute.Test SMS Send.TransactionId}}"
                 }               
