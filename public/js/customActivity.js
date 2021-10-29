@@ -54,10 +54,10 @@ define([
                     $('#sponsorId').val(val);
                 }
 
-                if (key === 'authToken') {
+               /* if (key === 'authToken') {
                     $('#authToken').val(val);
                 }
-
+                */
                 if (key === 'studyId') {
                     $('#studyId').val(val);
                 }
@@ -91,14 +91,14 @@ define([
     function save() {
 
         var sponsorId = $('#sponsorId').val();
-        var authToken = $('#authToken').val();
+       // var authToken = $('#authToken').val();
         var studyId = $('#studyId').val();
         var fromNumber = $('#fromNumber').val();
         
        
         payload['arguments'].execute.inArguments = [{
             "sponsorId": sponsorId,
-            "authToken": authToken,
+        //  "authToken": authToken,
             "studyId": studyId,
             "fromNumber": fromNumber,
             "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}" //<----This should map to your data extension name and phone number column
