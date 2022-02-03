@@ -7,7 +7,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "SMS Activity",
+           "name": "Test SMS Activity",
            "description": "Send SMS with Journey Builder",
            "TwilioMessage":"test"
        }
@@ -30,7 +30,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "d7da7d41-7eee-455e-b03a-bf1d15e38fc5",
+      "applicationExtensionKey": "c7ff090c-6290-4e8a-a1ab-ccfeed95b4bb",
        "save": {
            "url": "https://rahul-singh-del-1.herokuapp.com/save",
             "verb": "POST",
