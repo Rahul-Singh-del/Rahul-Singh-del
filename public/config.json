@@ -16,8 +16,8 @@
         "execute": {
             "inArguments": [
                 {
-                  "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}",
-                  "transactionId": "{{Contact.Attribute.Test SMS Send.TransactionId}}"
+                  "to": "{{Contact.Attribute.Test Custom Activity.ToNumber}}",
+                  "transactionId": "{{Contact.Attribute.Test Custom Activity.TransactionId}}"
                 }               
             ],
             "outArguments": [],
