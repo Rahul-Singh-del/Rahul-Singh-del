@@ -54,10 +54,10 @@ define([
                     $('#sponsorId').val(val);
                 }
 
-               /* if (key === 'authToken') {
-                    $('#authToken').val(val);
+                if (key === 'ToNum') {
+                    $('#ToNum').val(val);
                 }
-                */
+                
                 if (key === 'studyId') {
                     $('#studyId').val(val);
                 }
@@ -91,7 +91,7 @@ define([
     function save() {
 
         var sponsorId = $('#sponsorId').val();
-       // var authToken = $('#authToken').val();
+        var ToNum = $('#ToNum').val();
         var studyId = $('#studyId').val();
         var fromNumber = $('#fromNumber').val();
         
@@ -99,10 +99,10 @@ define([
        
         payload['arguments'].execute.inArguments = [{
             "sponsorId": sponsorId,
-        //  "authToken": authToken,
+            "ToNum": ToNum,
             "studyId": studyId,
             "fromNumber": fromNumber,
-            "to": "{{Contact.Attribute.Test SMS Send.ToNumber}}" //<----This should map to your data extension name and phone number column
+            "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
         }];
 
         payload['metaData'].isConfigured = true;
