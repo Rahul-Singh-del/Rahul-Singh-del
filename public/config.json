@@ -16,7 +16,7 @@
         "execute": {
             "inArguments": [
                 {
-                  "to": "{{Contact.Attribute.Test Custom Activity.ToNumber}}",
+                  "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}",
                   "transactionId": "{{Contact.Attribute.Test Custom Activity.TransactionId}}"
                 }               
             ],
@@ -94,7 +94,7 @@
                     },                    
                     {
                         "to": {
-                            "dataType": "String",
+                            "dataType": "phone",
                             "isNullable": false,
                             "direction": "out"   
                         }
