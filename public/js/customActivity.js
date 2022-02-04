@@ -84,7 +84,7 @@ define([
     }
 
     function onGetEndpoints (endpoints) {
-        // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
+        Response: endpoints = { restHost: https://iqvia-rds-sms-send-message-exp-1-0-dev.us-e1.cloudhub.io/api/messages } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
