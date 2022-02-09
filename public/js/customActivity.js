@@ -50,22 +50,11 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'sponsorId') {
-                    $('#sponsorId').val(val);
+                if (key === 'adhocText') {
+                    $('#adhoc').val(val);
                 }
 
-                if (key === 'ToNum') {
-                    $('#ToNum').val(val);
-                }
-                
-                if (key === 'studyId') {
-                    $('#studyId').val(val);
-                }
-
-                if (key === 'fromNumber') {
-                    $('#fromNumber').val(val);
-                }                                                               
-
+             
             })
         });
 
@@ -79,13 +68,13 @@ define([
 
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log("Tokens function: "+JSON.stringify(tokens));
+       // console.log("Tokens function: "+JSON.stringify(tokens));
         //authTokens = tokens;
     }
 
     function onGetEndpoints (endpoints) {
        // Response: endpoints = { restHost: https://iqvia-rds-sms-send-message-exp-1-0-dev.us-e1.cloudhub.io/api/messages } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log("Get End Points function: "+JSON.stringify(endpoints));
+      //  console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
     function save() {
