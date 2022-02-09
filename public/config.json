@@ -7,7 +7,7 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Test SMS Activity",
+           "name": "Test Adhoc SMS Activity",
            "description": "Send SMS with Journey Builder",
            "TwilioMessage":"test"
        }
@@ -16,8 +16,7 @@
         "execute": {
             "inArguments": [
                 {
-                  "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}",
-                  "transactionId": "{{Contact.Attribute.Test Custom Activity.TransactionId}}"
+                  "ProtocolId": "{{Test Custom Activity.Protocol Id}}"
                 }               
             ],
             "outArguments": [],
@@ -79,34 +78,20 @@
             "execute": {
                 "inArguments": [
                     {
-                        "sponsorId": {
+                        "adhocText": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "transactionId": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "to": {
-                            "dataType": "phone",
-                            "isNullable": false,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
                     },
                     {
-                        "fromNumber": {
+                        "ProtocolId": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
-                    }                    
-                   
+                    }     
+                  
                 ],
                 "outArguments": []
             }
