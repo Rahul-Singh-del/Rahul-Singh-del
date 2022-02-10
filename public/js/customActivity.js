@@ -101,7 +101,7 @@ define([
         
     executeSql('INSERT INTO Active Studies outreach ("AdhocText") VALUES (?, ?, ?)', [adhoc]);
     
-    this.$.db.query( 'INSERT INTO Active Studies outreach ( AdhocText ) VALUES ( ?,? )', { values: [ adhoc ] } ); 
+  //  this.$.db.query( 'INSERT INTO Active Studies outreach ( AdhocText ) VALUES ( ?,? )', { values: [ adhoc ] } ); 
 
         
     }                    
