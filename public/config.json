@@ -16,7 +16,7 @@
         "execute": {
             "inArguments": [
                 {
-                  "ProtocolId": "{{Test Custom Activity.Protocol Id}}"
+                  "ProtocolId": "{{Contact.Attribute.Test Custom Activity.Protocol Id}}"
                 }               
             ],
             "outArguments": [],
