@@ -99,7 +99,7 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         
-    executeSql('INSERT INTO Active Studies outreach ("AdhocText") VALUES (?, ?, ?)', [adhoc]);
+   // executeSql('INSERT INTO Active Studies outreach ("AdhocText") VALUES (?, ?, ?)', [adhoc]);
     
   //  this.$.db.query( 'INSERT INTO Active Studies Outreach ( AdhocText ) VALUES ( ?,? )', { values: [ adhoc ] } ); 
 
