@@ -29,9 +29,9 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "c7ff090c-6290-4e8a-a1ab-ccfeed95b4bb",
+      "applicationExtensionKey": "c7ff090c-6290-4e8a-a1ab-ccfeed95b4bb",  
        "save": {
-           "url": "https://rahul-singh-del-1.herokuapp.com/save",
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -39,7 +39,7 @@
             "timeout": 2000
        },
        "publish": {
-           "url": "https://rahul-singh-del-1.herokuapp.com/publish",
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -47,7 +47,7 @@
             "timeout": 2000
        },
        "validate": {
-           "url": "https://rahul-singh-del-1.herokuapp.com/validate",
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -55,7 +55,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://rahul-singh-del-1.herokuapp.com/stop",
+           "url": "https://rahul-singh-del-1.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
