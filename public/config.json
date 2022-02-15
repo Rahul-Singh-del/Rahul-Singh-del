@@ -16,6 +16,7 @@
         "execute": {
             "inArguments": [
                 {
+                  "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}",
                   "ProtocolId": "{{Contact.Attribute.Test Custom Activity.Protocol Id}}"
                 }               
             ],
@@ -90,7 +91,15 @@
                             "isNullable": false,
                             "direction": "in"   
                         }
-                    }     
+                    },
+                      
+                    {
+                        "to": {
+                            "dataType": "phone",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    }
                   
                 ],
                 "outArguments": []
