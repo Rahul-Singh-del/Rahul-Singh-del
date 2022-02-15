@@ -98,7 +98,7 @@ define([
            
         }];
         
-        executeSql('Update Active Studies outreach SET "AdhocText" = [adhoc] WHERE "Clinical Trial Protocol ID" = [studyId]);
+        executeSql('Update Active Studies Outreach SET AdhocText = [adhoc] WHERE Clinical Trial Protocol ID = [studyId]);
         payload['metaData'].isConfigured = true;
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
