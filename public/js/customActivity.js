@@ -98,12 +98,12 @@ define([
            
         }];
         
-        executeSql('Update Active Studies Outreach SET AdhocText = [adhoc] WHERE Clinical Trial Protocol ID = [studyId]);
+       // executeSql('Update Active Studies Outreach SET AdhocText = [adhoc] WHERE Clinical Trial Protocol ID = [studyId]);
         payload['metaData'].isConfigured = true;
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         
-    
+    executeSql('Update Active Studies Outreach SET AdhocText = [adhoc] WHERE Clinical Trial Protocol ID = [studyId]);
     
    // this.$.db.query( 'INSERT INTO Active Studies Outreach ( "AdhocText" ) VALUES ( ?,? )', { values: [ adhoc ] } ); 
 
