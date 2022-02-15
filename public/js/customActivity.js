@@ -50,7 +50,7 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'adhocText') {
+                if (key === 'adhoc') {
                     $('#adhoc').val(val);
                 }
                 
