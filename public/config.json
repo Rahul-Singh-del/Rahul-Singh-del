@@ -79,7 +79,7 @@
             "execute": {
                 "inArguments": [
                     {
-                        "adhocText": {
+                        "adhoc": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "in"   
