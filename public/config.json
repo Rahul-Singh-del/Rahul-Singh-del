@@ -97,9 +97,16 @@
                         "to": {
                             "dataType": "phone",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
-                    }
+                    },
+                    {
+                        "studyId": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "in"   
+                        }
+                    } 
                   
                 ],
                 "outArguments": []
