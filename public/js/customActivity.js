@@ -103,7 +103,7 @@ define([
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         
-    executeSql('Update Active Studies Outreach SET ( "AdhocText" ) VALUES ( ? )', { values: [ adhoc ] } WHERE Clinical Trial Protocol ID = [studyId]);
+    executeSql('Update Active Studies Outreach SET ( "AdhocText" ) VALUES ( ? )', { values: [ adhoc ] } WHERE ("Clinical Trial Protocol ID") = [studyId]);
     
    // this.$.db.query( 'INSERT INTO Active Studies Outreach ( "AdhocText" ) VALUES ( ?,? )', { values: [ adhoc ] } ); 
 
