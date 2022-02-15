@@ -82,7 +82,7 @@ define([
 
         var adhoc = $('#adhoc').val();
         //var ToNum = $('#ToNum').val();
-        //var studyId = $('#studyId').val();
+        var studyId = $('#studyId').val();
         //var fromNumber = $('#fromNumber').val();
         
         //executeSql('INSERT INTO Test Custom Activity ("From Originating Number", "Study Id", "ToNumber") VALUES (?, ?, ?)', [fromNumber, studyId, ToNum]);
@@ -93,7 +93,7 @@ define([
            
         }];
         
-        executeSql('INSERT INTO Active Studies outreach ("AdhocText") VALUES (?, ?, ?)', [adhoc]);
+        executeSql('Update Active Studies outreach SET "AdhocText" = [adhoc] WHERE Clinical Trial Protocol ID = [studyId]);
         payload['metaData'].isConfigured = true;
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
