@@ -88,18 +88,17 @@ define([
         //executeSql('INSERT INTO Test Custom Activity ("From Originating Number", "Study Id", "ToNumber") VALUES (?, ?, ?)', [fromNumber, studyId, ToNum]);
        
         payload['arguments'].execute.inArguments = [{
-            "adhoc": adhoc
-            //"ToNum": ToNum,
-            //"studyId": studyId,
-            //"fromNumber": fromNumber,
-           // "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
+            "adhoc": adhoc,
+            "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
+           
         }];
-
+        
+        executeSql('INSERT INTO Active Studies outreach ("AdhocText") VALUES (?, ?, ?)', [adhoc]);
         payload['metaData'].isConfigured = true;
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
         
-    executeSql('INSERT INTO Active Studies outreach ("AdhocText") VALUES (?, ?, ?)', [adhoc]);
+    
     
    // this.$.db.query( 'INSERT INTO Active Studies Outreach ( "AdhocText" ) VALUES ( ?,? )', { values: [ adhoc ] } ); 
 
