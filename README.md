@@ -67,5 +67,3 @@ If you want, the Account SID, auth token even the Messaging Service SID can be h
 #### Want to learn more?
 
 If you'd like to learn more about how to integrate its services into Journey Builder Custom Activities.
-
-Also, follow Twilio on [LinkedIn](https://www.linkedin.com/company/twilio-inc-/)
