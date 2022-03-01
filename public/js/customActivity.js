@@ -89,7 +89,7 @@ define([
         var studyId = $('#studyId').val();
         //var fromNumber = $('#fromNumber').val();
         
-        executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "Country", "Language", "AdhocText") VALUES (?, ?, ?)', [studyId, 'US', 'en', adhoc]);
+        executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "Country", "Language", "AdhocText") VALUES (?, ?, ?)', [studyId, "US" "en", adhoc]);
        
         payload['arguments'].execute.inArguments = [{
             "adhoc": adhoc,
