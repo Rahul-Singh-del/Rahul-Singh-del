@@ -86,7 +86,7 @@
                         }
                     },
                     {
-                        "ProtocolId": {
+                        "contactId": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "in"   
