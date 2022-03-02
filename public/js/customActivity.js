@@ -93,13 +93,14 @@ define([
        
         payload['arguments'].execute.inArguments = [{
             "adhoc": adhoc,
-            "studyId": studyId,
-            "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
+            "studyId": studyId
+           // "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
             
        
         }];
-       // executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "Country", "Language", "AdhocText") VALUES (?, ?, ?)', [studyId, "US", "en", adhoc]);
-       //  executeSql('Update Active Studies Outreach SET ( "AdhocText" ) VALUES ( ? )', { values: [ adhoc ] } WHERE ("Clinical Trial Protocol ID") = [studyId]);  
+        
+        executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "Country", "Language", "AdhocText") VALUES (?, ?, ?)', [studyId, "US", "en", adhoc]);
+        
         payload['metaData'].isConfigured = true;
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
