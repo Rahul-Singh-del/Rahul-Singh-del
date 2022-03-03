@@ -112,7 +112,7 @@ define([
        
         }];
         
-       // executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "Country", "Language", "AdhocText") VALUES (?, ?, ?)', [studyId, "US", "en", adhoc]);
+        executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "AdhocText", "Contact ID") VALUES (?, ?, ?)', [studyId, adhoc, contactId]);
         
         payload['metaData'].isConfigured = true;
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
