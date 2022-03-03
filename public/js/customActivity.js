@@ -98,9 +98,12 @@ define([
        
         payload['arguments'].execute.inArguments = [{
             
-            "adhoc": '{{Contact.Custom Activity.Test Active Data.AdhocText}}',
-            "studyId": '{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}',
-            "contactId": '{{Contact.Custom Activity.Test Active Data.Contact ID}}'
+            //"adhoc": '{{Contact.Custom Activity.Test Active Data.AdhocText}}',
+            //"studyId": '{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}',
+            //"contactId": '{{Contact.Custom Activity.Test Active Data.Contact ID}}'
+            'adhoc': '{{step1.' + adhoc + '.\"' + AdhocText + '\"}}'
+            'studyId': '{{step1.' + studyId + '.\"' + Clinical Trial Protocol ID + '\"}}'
+            'contactId': '{{step1.' + contactId + '.\"' + Contact ID + '\"}}'
            // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
 
             //"to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
