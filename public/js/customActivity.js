@@ -108,8 +108,7 @@ define([
 
             //"to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
             //"adhoc": adhoc,
-            //"studyId": studyId,
-            
+            //"studyId": studyId,            
        
         }];
         
