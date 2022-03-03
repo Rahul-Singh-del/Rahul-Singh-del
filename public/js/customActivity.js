@@ -101,8 +101,8 @@ define([
             //"adhoc": '{{Contact.Custom Activity.Test Active Data.AdhocText}}',
             //"studyId": '{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}',
             //"contactId": '{{Contact.Custom Activity.Test Active Data.Contact ID}}'
-            'adhoc': '{{adhoc.' + step1 + '.\"' + AdhocText + '\"}}'
-            'studyId': '{{studyId.' + step1 + '.\"' + Clinical Trial Protocol ID + '\"}}'
+            'adhoc': '{{adhoc.' + step1 + '.\"' + AdhocText + '\"}}',
+            'studyId': '{{studyId.' + step1 + '.\"' + Clinical Trial Protocol ID + '\"}}',
             'contactId': '{{contactId.' + step1 + '.\"' + Contact ID + '\"}}'
            // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
 
