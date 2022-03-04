@@ -16,8 +16,12 @@
         "execute": {
             "inArguments": [
                 {
-                  "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}",
-                  "studyId": "{{Contact.Attribute.Test Custom Activity.Protocol Id}}",
+                  "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}"
+                },
+                {
+                  "studyId": "{{Contact.Attribute.Test Custom Activity.Protocol Id}}"
+                },
+                {
                   "contactId": "{{Contact.Attribute.Test Custom Activity.ContactID}}"                 
                 }               
             ],
