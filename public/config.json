@@ -19,9 +19,14 @@
                   "to": "{{Contact.CustomActivity.Test Custom Activity.TargetNumber}}",
                   "studyId": "{{Contact.CustomActivity.Test Custom Activity.Protocol Id}}",
                   "contactId": "{{Contact.CustomActivity.Test Custom Activity.ContactID}}"
+                   "adhoc": "{{Contact.CustomActivity.Test Custom Activity.AdhocText}}"
                 }               
             ],
-            "outArguments": [],
+            "outArguments": [
+                {
+            "adhoc": ""
+                }
+            ],
             "url": "https://rahul-singh-del-1.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
