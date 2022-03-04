@@ -12,6 +12,8 @@ define([
         { "label": "Create SMS Message", "key": "eventDefinitionKey" }
     ];
     var currentStep = steps[0].key;
+    var eventDefinitionKey = '';
+    var deFields = [];
 
     $(window).ready(onRender);
 
@@ -89,7 +91,9 @@ define([
     	function requestedInteractionHandler (settings) {
 		try {
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
-			$('#select-entryevent-defkey').val(eventDefinitionKey);
+			$('#adhoc').val(eventDefinitionKey);
+			$('#studyId').val(eventDefinitionKey);
+			$('#contactId').val(eventDefinitionKey);
 
 			if (settings.triggers[0].type === 'SalesforceObjectTriggerV2' &&
 					settings.triggers[0].configurationArguments &&
@@ -107,54 +111,68 @@ define([
 					}));
 				});
 
-				deFields.forEach((option) => {
-					$('#select-id-dropdown').append($('<option>', {
-						value: option,
-						text: option
-					}));
-				});
+				//deFields.forEach((option) => {
+				//	$('#select-id-dropdown').append($('<option>', {
+				//		value: option,
+				//		text: option
+				//	}));
+				//});
 
-				$('#select-id').hide();
-				$('#select-id-dropdown').show();
+				//$('#select-id').hide();
+				//$('#select-id-dropdown').show();
 			} else {
-				$('#select-id-dropdown').hide();
-				$('#select-id').show();
+				//$('#select-id-dropdown').hide();
+				//$('#select-id').show();
 			}
 		} catch (e) {
 			console.error(e);
-			$('#select-id-dropdown').hide();
-			$('#select-id').show();
+			//$('#select-id-dropdown').hide();
+			//$('#select-id').show();
 		}
 	}
 
     
     function save() {
 
-        var adhoc = $('#adhoc').val();
-        //var ToNum = $('#ToNum').val();
-        var studyId = $('#studyId').val();
-        //var fromNumber = $('#fromNumber').val();
-        var contactId = $('#contactId').val();
+		//var adhoc = $('#adhoc').val();
+		//var ToNum = $('#ToNum').val();
+		//var studyId = $('#studyId').val();
+		//var fromNumber = $('#fromNumber').val();
+		//var contactId = $('#contactId').val();
         
-        
+        	payload['arguments'] = payload['arguments'] || {};
+		payload['arguments'].execute = payload['arguments'].execute || {};
+
+		var idField = deFields.length > 0 ? $('#adhoc').val() : $('#studyId').val() : $('#contactId').val();
+
+		payload['arguments'].execute.inArguments = [{
+			'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
+		}];
+
+		payload['metaData'] = payload['metaData'] || {};
+		payload['metaData'].isConfigured = true;
+
+		console.log(JSON.stringify(payload));
+
+		connection.trigger('updateActivity', payload);
        
-        payload['arguments'].execute.inArguments = [{
+        //payload['arguments'].execute.inArguments = [{
             
-            "adhoc": "{{Contact.Custom Activity.Test Active Data.AdhocText}}",
-            "studyId": "{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}",
-            "contactId": "{{Contact.Custom Activity.Test Active Data.Contact ID}}"
+           // "adhoc": "{{Contact.Custom Activity.Test Active Data.AdhocText}}",
+            //"studyId": "{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}",
+            //"contactId": "{{Contact.Custom Activity.Test Active Data.Contact ID}}"
             //"adhoc": '{{adhoc.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.AdhocText + '\"}}',
             //"studyId": '{{studyId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID + '\"}}',
             //"contactId": '{{contactId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Contact ID + '\"}}'
            // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
 
-        }];
+       // }];
         
        // executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "AdhocText", "Contact ID") VALUES (?, ?, ?)', [studyId, adhoc, contactId]);
         
-        payload['metaData'].isConfigured = true;
-        console.log("Payload on SAVE function: "+JSON.stringify(payload));
-        connection.trigger('updateActivity', payload);
+       // payload['metaData'].isConfigured = true;
+        //console.log("Payload on SAVE function: "+JSON.stringify(payload));
+        //connection.trigger('updateActivity', payload);
         
    // executeSql('Update Active Studies Outreach SET ( "AdhocText" ) VALUES ( ? )', { values: [ adhoc ] } WHERE ("Clinical Trial Protocol ID") = [studyId]);
     
