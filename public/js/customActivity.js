@@ -9,7 +9,7 @@ define([
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-        { "label": "Create SMS Message", "key": "step1" }
+        { "label": "Create SMS Message", "key": "eventDefinitionKey" }
     ];
     var currentStep = steps[0].key;
 
@@ -86,6 +86,48 @@ define([
       //  console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
+    	function requestedInteractionHandler (settings) {
+		try {
+			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
+			$('#select-entryevent-defkey').val(eventDefinitionKey);
+
+			if (settings.triggers[0].type === 'SalesforceObjectTriggerV2' &&
+					settings.triggers[0].configurationArguments &&
+					settings.triggers[0].configurationArguments.eventDataConfig) {
+
+				// This workaround is necessary as Salesforce occasionally returns the eventDataConfig-object as string
+				if (typeof settings.triggers[0].configurationArguments.eventDataConfig === 'string' ||
+							!settings.triggers[0].configurationArguments.eventDataConfig.objects) {
+						settings.triggers[0].configurationArguments.eventDataConfig = JSON.parse(settings.triggers[0].configurationArguments.eventDataConfig);
+				}
+
+				settings.triggers[0].configurationArguments.eventDataConfig.objects.forEach((obj) => {
+					deFields = deFields.concat(obj.fields.map((fieldName) => {
+						return obj.dePrefix + fieldName;
+					}));
+				});
+
+				deFields.forEach((option) => {
+					$('#select-id-dropdown').append($('<option>', {
+						value: option,
+						text: option
+					}));
+				});
+
+				$('#select-id').hide();
+				$('#select-id-dropdown').show();
+			} else {
+				$('#select-id-dropdown').hide();
+				$('#select-id').show();
+			}
+		} catch (e) {
+			console.error(e);
+			$('#select-id-dropdown').hide();
+			$('#select-id').show();
+		}
+	}
+
+    
     function save() {
 
         var adhoc = $('#adhoc').val();
@@ -106,10 +148,6 @@ define([
             //"contactId": '{{contactId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Contact ID + '\"}}'
            // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
 
-            //"to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}" //<----This should map to your data extension name and phone number column
-            //"adhoc": adhoc,
-            //"studyId": studyId,            
-       
         }];
         
        // executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "AdhocText", "Contact ID") VALUES (?, ?, ?)', [studyId, adhoc, contactId]);
