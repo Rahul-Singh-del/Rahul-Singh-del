@@ -140,13 +140,28 @@ define([
 		//var fromNumber = $('#fromNumber').val();
 		var contactId = $('#contactId').val();
         
-        	payload['arguments'] = payload['arguments'] || {};
-		payload['arguments'].execute = payload['arguments'].execute || {};
+        	
+       
+       // payload['arguments'].execute.inArguments = [{
+            
+         //   "adhoc": "{{Contact.Custom Activity.Test Active Data.AdhocText}}",
+          //  "studyId": "{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}",
+           // "contactId": "{{Contact.Custom Activity.Test Active Data.Contact ID}}"
+            //"adhoc": '{{adhoc.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.AdhocText + '\"}}',
+            //"studyId": '{{studyId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID + '\"}}',
+            //"contactId": '{{contactId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Contact ID + '\"}}'
+           // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
+
+      //  }];
+       // payload['arguments'] = payload['arguments'] || {};
+	//	payload['arguments'].execute = payload['arguments'].execute || {};
 
 		var idField = deFields.length > 0 ? $('#adhoc').val() : $('#studyId').val() : $('#contactId').val();
 
 		payload['arguments'].execute.inArguments = [{
-			'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
+			'adhoc': '{{Event.' + eventDefinitionKey + 'Custom Activity.Test Active Data.\"' + AdhocText + '\"}}'
+			'studyId': '{{Event.' + eventDefinitionKey + 'Custom Activity.Test Active Data.\"' + Clinical Trial Protocol ID + '\"}}'
+			'contactId': '{{Event.' + eventDefinitionKey + 'Custom Activity.Test Active Data.\"' + Contact ID + '\"}}'
 		}];
 
 		payload['metaData'] = payload['metaData'] || {};
@@ -155,19 +170,6 @@ define([
 		console.log(JSON.stringify(payload));
 
 		connection.trigger('updateActivity', payload);
-       
-        payload['arguments'].execute.inArguments = [{
-            
-            "adhoc": "{{Contact.Custom Activity.Test Active Data.AdhocText}}",
-            "studyId": "{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}",
-            "contactId": "{{Contact.Custom Activity.Test Active Data.Contact ID}}"
-            //"adhoc": '{{adhoc.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.AdhocText + '\"}}',
-            //"studyId": '{{studyId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID + '\"}}',
-            //"contactId": '{{contactId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Contact ID + '\"}}'
-           // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
-
-        }];
-        
        // executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "AdhocText", "Contact ID") VALUES (?, ?, ?)', [studyId, adhoc, contactId]);
         
        // payload['metaData'].isConfigured = true;
