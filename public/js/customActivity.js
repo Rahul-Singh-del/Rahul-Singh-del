@@ -142,7 +142,7 @@ define([
         
         	
        
-       // payload['arguments'].execute.inArguments = [{
+        payload['arguments'].execute.inArguments = [{
             
          //   "adhoc": "{{Contact.Custom Activity.Test Active Data.AdhocText}}",
           //  "studyId": "{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}",
