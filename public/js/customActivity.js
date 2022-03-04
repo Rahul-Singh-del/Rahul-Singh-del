@@ -134,11 +134,11 @@ define([
     
     function save() {
 
-		//var adhoc = $('#adhoc').val();
+		var adhoc = $('#adhoc').val();
 		//var ToNum = $('#ToNum').val();
-		//var studyId = $('#studyId').val();
+		var studyId = $('#studyId').val();
 		//var fromNumber = $('#fromNumber').val();
-		//var contactId = $('#contactId').val();
+		var contactId = $('#contactId').val();
         
         	payload['arguments'] = payload['arguments'] || {};
 		payload['arguments'].execute = payload['arguments'].execute || {};
