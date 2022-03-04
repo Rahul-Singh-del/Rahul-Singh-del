@@ -143,19 +143,23 @@ define([
         	
        
         payload['arguments'].execute.inArguments = [{
+		
+	    "adhoc": adhoc,
+           "studyId": studyId,
+           "contactId": contactId
             
-            "adhoc": "{{Contact.CustomActivity.Test Active Data.AdhocText}}",
+         /*   "adhoc": "{{Contact.CustomActivity.Test Active Data.AdhocText}}",
            "studyId": "{{Contact.CustomActivity.Test Active Data.Clinical Trial Protocol ID}}",
-           "contactId": "{{Contact.CustomActivity.Test Active Data.Contact ID}}"
+           "contactId": "{{Contact.CustomActivity.Test Active Data.Contact ID}}" */
             //"adhoc": '{{adhoc.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.AdhocText + '\"}}',
             //"studyId": '{{studyId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID + '\"}}',
             //"contactId": '{{contactId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Contact ID + '\"}}'
            // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
 		
-	/*	payload['arguments'].execute.inArguments.push({"AdhocText": adhoc});
-	    	payload['arguments'].execute.inArguments.push({"Clinical Trial Protocol ID": studyId});
-	    	payload['arguments'].execute.inArguments.push({"Contact ID": contactId});
-	*/
+		payload['arguments'].execute.inArguments.push({"{{Contact.CustomActivity.Test Active Data.AdhocText}}": adhoc});
+	    	payload['arguments'].execute.inArguments.push({"{{Contact.CustomActivity.Test Active Data.Clinical Trial Protocol ID}}": studyId});
+	    	payload['arguments'].execute.inArguments.push({"{{Contact.CustomActivity.Test Active Data.Contact ID}}": contactId});
+	
         }];
        // payload['arguments'] = payload['arguments'] || {};
 	//	payload['arguments'].execute = payload['arguments'].execute || {};
