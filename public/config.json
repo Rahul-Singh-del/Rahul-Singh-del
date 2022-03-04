@@ -19,7 +19,7 @@
                   "to": "{{Contact.CustomActivity.Test Custom Activity.TargetNumber}}",
                   "studyId": "{{Contact.CustomActivity.Test Custom Activity.Protocol Id}}",
                   "contactId": "{{Contact.CustomActivity.Test Custom Activity.ContactID}}"
-                   "adhoc": "{{Contact.CustomActivity.Test Custom Activity.AdhocText}}"
+                 
                 }               
             ],
             "outArguments": [
