@@ -144,9 +144,9 @@ define([
        
         payload['arguments'].execute.inArguments = [{
             
-         //   "adhoc": "{{Contact.Custom Activity.Test Active Data.AdhocText}}",
-          //  "studyId": "{{Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID}}",
-           // "contactId": "{{Contact.Custom Activity.Test Active Data.Contact ID}}"
+         //   "adhoc": "{{Contact.CustomActivity.Test Active Data.AdhocText}}",
+          //  "studyId": "{{Contact.CustomActivity.Test Active Data.Clinical Trial Protocol ID}}",
+           // "contactId": "{{Contact.CustomActivity.Test Active Data.Contact ID}}"
             //"adhoc": '{{adhoc.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.AdhocText + '\"}}',
             //"studyId": '{{studyId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Clinical Trial Protocol ID + '\"}}',
             //"contactId": '{{contactId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Contact ID + '\"}}'
@@ -159,9 +159,9 @@ define([
 		var idField = deFields.length > 0 ? $('#adhoc').val() : $('#studyId').val() : $('#contactId').val();
 
 		payload['arguments'].execute.inArguments = [{
-			'adhoc': '{{Event.' + eventDefinitionKey + 'Custom Activity.Test Active Data.\"' + AdhocText + '\"}}'
-			'studyId': '{{Event.' + eventDefinitionKey + 'Custom Activity.Test Active Data.\"' + Clinical Trial Protocol ID + '\"}}'
-			'contactId': '{{Event.' + eventDefinitionKey + 'Custom Activity.Test Active Data.\"' + Contact ID + '\"}}'
+			'adhoc': '{{Event.' + eventDefinitionKey + 'Contact.CustomActivity.Test Active Data.\"' + AdhocText + '\"}}'
+			'studyId': '{{Event.' + eventDefinitionKey + 'Contact.CustomActivity.Test Active Data.\"' + Clinical Trial Protocol ID + '\"}}'
+			'contactId': '{{Event.' + eventDefinitionKey + 'Contact.CustomActivity.Test Active Data.\"' + Contact ID + '\"}}'
 		}];
 
 		payload['metaData'] = payload['metaData'] || {};
