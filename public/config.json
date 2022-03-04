@@ -17,7 +17,8 @@
             "inArguments": [
                 {
                   "to": "{{Contact.CustomActivity.Test Custom Activity.TargetNumber}}",
-                  "ProtocolId": "{{Contact.CustomActivity.Test Custom Activity.Protocol Id}}"
+                  "studyId": "{{Contact.CustomActivity.Test Custom Activity.Protocol Id}}",
+                  "contactId": "{{Contact.CustomActivity.Test Custom Activity.ContactID}}"
                 }               
             ],
             "outArguments": [],
