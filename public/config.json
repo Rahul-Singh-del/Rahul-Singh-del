@@ -16,10 +16,9 @@
         "execute": {
             "inArguments": [
                 {
-                  "to": "{{Contact.CustomActivity.Test Custom Activity.TargetNumber}}",
-                  "studyId": "{{Contact.CustomActivity.Test Custom Activity.Protocol Id}}",
-                  "contactId": "{{Contact.CustomActivity.Test Custom Activity.ContactID}}"
-                 
+                  "to": "{{Contact.Attribute.Test Custom Activity.TargetNumber}}",
+                  "studyId": "{{Contact.Attribute.Test Custom Activity.Protocol Id}}",
+                  "contactId": "{{Contact.Attribute.Test Custom Activity.ContactID}}"                 
                 }               
             ],
             "outArguments": [
