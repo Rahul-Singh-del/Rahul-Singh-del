@@ -109,7 +109,15 @@
                     } 
                   
                 ],
-                "outArguments": []
+                "outArguments": [
+                    {
+                        "adhoc": {
+                            "dataType": "string",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    }
+                ]
             }
         }
     }
