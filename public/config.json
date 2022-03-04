@@ -25,11 +25,7 @@
                   "contactId": "{{Contact.Attribute.Test Custom Activity.ContactID}}"                 
                 }               
             ],
-            "outArguments": [
-                {
-            "adhoc": ""
-                }
-            ],
+            "outArguments": [],
             "url": "https://rahul-singh-del-1.herokuapp.com/execute",
             "verb": "POST",
             "body": "",
@@ -118,15 +114,7 @@
                     } 
                   
                 ],
-                "outArguments": [
-                    {
-                        "adhoc": {
-                            "dataType": "string",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    }
-                ]
+                "outArguments": []
             }
         }
     }
