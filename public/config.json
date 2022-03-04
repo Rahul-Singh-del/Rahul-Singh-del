@@ -27,11 +27,12 @@
             ],
             "outArguments": [],
             "url": "https://rahul-singh-del-1.herokuapp.com/execute",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": true,
-            "timeout": 2000
+              "verb": "POST",
+              "body": "",
+              "header": "",
+              "format": "json",
+              "useJwt": false,
+              "timeout": 10000
         }
     },
     "configurationArguments": {
@@ -41,7 +42,7 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        },
        "publish": {
@@ -49,7 +50,7 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        },
        "validate": {
@@ -57,7 +58,7 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        },
        "stop": {
@@ -65,7 +66,7 @@
             "verb": "POST",
             "body": "",
             "format": "json",
-            "useJwt": true,
+            "useJwt": false,
             "timeout": 2000
        }
     },
