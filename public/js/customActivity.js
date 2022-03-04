@@ -88,7 +88,7 @@ define([
       //  console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
 
-    	function requestedInteractionHandler (settings) {
+    /*	function requestedInteractionHandler (settings) {
 		try {
 			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
 			$('#adhoc').val(eventDefinitionKey);
@@ -131,7 +131,7 @@ define([
 		}
 	}
 
-    
+    */
     function save() {
 
 		var adhoc = $('#adhoc').val();
@@ -152,10 +152,10 @@ define([
             //"contactId": '{{contactId.' + step1 + '.\"' + Contact.Custom Activity.Test Active Data.Contact ID + '\"}}'
            // 'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
 		
-		payload['arguments'].execute.inArguments.push({"AdhocText": adhoc});
+	/*	payload['arguments'].execute.inArguments.push({"AdhocText": adhoc});
 	    	payload['arguments'].execute.inArguments.push({"Clinical Trial Protocol ID": studyId});
 	    	payload['arguments'].execute.inArguments.push({"Contact ID": contactId});
-
+	*/
         }];
        // payload['arguments'] = payload['arguments'] || {};
 	//	payload['arguments'].execute = payload['arguments'].execute || {};
@@ -174,8 +174,7 @@ define([
 		//console.log(JSON.stringify(payload));
 
 		//connection.trigger('updateActivity', payload);
-       // executeSql('INSERT INTO Test Active Data ("Clinical Trial Protocol ID", "AdhocText", "Contact ID") VALUES (?, ?, ?)', [studyId, adhoc, contactId]);
-        
+	    
         payload['metaData'].isConfigured = true;
         console.log("Payload on SAVE function: "+JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
@@ -186,9 +185,9 @@ define([
 
         
     }                    
-	connection.on('initActivity', initialize);
+	//connection.on('initActivity', initialize);
 	//connection.on('clickedNext', onClickedNext);
 	//connection.on('clickedBack', onClickedBack);
 	//connection.on('gotoStep', onGotoStep);
-	connection.on('requestedInteraction', requestedInteractionHandler);
+	//connection.on('requestedInteraction', requestedInteractionHandler);
 });
